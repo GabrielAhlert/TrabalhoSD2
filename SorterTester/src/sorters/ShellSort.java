@@ -6,20 +6,21 @@
 package sorters;
 
 import java.util.Calendar;
-import models.results;
+import models.R;
 
 /**
  *
  * @author gabri
  */
-public class ShellSort {
+public class ShellSort extends Sort{
     int[] lista;
 
     public ShellSort(int[] l) {
         this.lista = l;
     }
     
-    public results sort(){
+    @Override
+    public R sort(){
         Calendar cal1 = Calendar.getInstance();
 	int i, j, value, gap = 1; 
         long comp = 0, moves = 0;
@@ -50,10 +51,11 @@ public class ShellSort {
         
         Calendar cal2 = Calendar.getInstance();
         
-        return new results(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
+        return new R(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
     }
 
 
+    @Override
     public void print() {
         for (int i = 0; i <lista.length; i++) {
            System.out.println(lista[i]); 

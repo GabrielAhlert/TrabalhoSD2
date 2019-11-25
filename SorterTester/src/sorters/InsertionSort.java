@@ -6,20 +6,21 @@
 package sorters;
 
 import java.util.Calendar;
-import models.results;
+import models.R;
 
 /**
  *
  * @author gabri
  */
-public class InsertionSort {
+public class InsertionSort extends Sort{
     public int[] lista;
 
     public InsertionSort(int[] lista) {
         this.lista = lista;
     }
 
-    public results sort()  
+    @Override
+    public R sort()  
     {  
         Calendar cal1 = Calendar.getInstance();
         int i, key, j;
@@ -40,9 +41,10 @@ public class InsertionSort {
             moves++;
         }  
         Calendar cal2 = Calendar.getInstance();
-        return new results(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
+        return new R(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
     }
     
+    @Override
     public void print() {
         for (int i = 0; i <lista.length; i++) {
            System.out.println(lista[i]); 

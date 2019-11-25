@@ -5,8 +5,10 @@
  */
 package view;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
+
+import javax.swing.JOptionPane;
+import sorters.*;
+import reader.Reader.*;
 
 /**
  *
@@ -47,13 +49,17 @@ public class main extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
+        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selection-Sort", "Insertion-Sort", "Bubble-Sort", "Shell-Sort", "Quick-Sort" }));
         jComboBox1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox1ActionPerformed(evt);
             }
         });
 
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selection-Sort", "Insertion-Sort", "Bubble-Sort", "Shell-Sort", "Quick-Sort" }));
+
         buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setSelected(true);
         jRadioButton1.setText("Ordenados");
         jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -179,7 +185,84 @@ public class main extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-
+        Sort a = null, b = null;
+        int i = 1000 ;
+        int [] a_ = null;
+        int [] b_ = null;
+        
+        
+        switch(jSlider1.getValue()){
+            case 0:
+                i = 1000;
+            break;
+            case 1:
+                i = 10000;
+            break;
+            case 2:
+                i = 100000;
+            break;
+            case 3:
+                i = 1000000;
+            break;
+        }
+        
+        if (jRadioButton1.isSelected()){
+            a_ = reader.Reader.readOrd(i);
+            b_ = reader.Reader.readOrd(i);
+        }
+        
+        if (jRadioButton2.isSelected()){
+            a_ = reader.Reader.readAle(i);
+            b_ = reader.Reader.readAle(i);
+        }
+        
+        if (jRadioButton3.isSelected()){
+            a_ = reader.Reader.readDec(i);
+            b_ = reader.Reader.readDec(i);
+        }
+            
+        
+        
+        
+        switch(jComboBox1.getSelectedIndex()){
+            case 0:
+                a = new SelectionSort(a_);
+            break;
+            case 1:
+                a = new InsertionSort(a_);
+            break;
+            case 2:
+                a = new BubbleSort(a_);
+            break;
+            case 3:
+                a = new ShellSort(a_);
+            break;
+            case 4:
+                a = new QuickSort(a_);
+            break;
+        }
+        
+        switch(jComboBox2.getSelectedIndex()){
+            case 0:
+                b = new SelectionSort(b_);
+            break;
+            case 1:
+                b = new InsertionSort(b_);
+            break;
+            case 2:
+                b = new BubbleSort(b_);
+            break;
+            case 3:
+                b = new ShellSort(b_);
+            break;
+            case 4:
+                b = new QuickSort(b_);
+            break;
+        }
+        
+        JOptionPane.showMessageDialog(this, a.sort() + "\n" + b.sort());
+        
+        
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
