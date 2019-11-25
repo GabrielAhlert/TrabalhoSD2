@@ -5,11 +5,14 @@
  */
 package sortertester;
 
+import javax.swing.JFrame;
 import sorters.BubbleSort;
 import sorters.InsertionSort;
 import sorters.QuickSort;
 import sorters.SelectionSort;
 import sorters.ShellSort;
+import sorters.Sort;
+import view.main;
 
 /**
  *
@@ -22,23 +25,27 @@ public class SorterTester {
      */
     public static void main(String[] args) {
         
-        SelectionSort a = new SelectionSort(reader.Reader.readAle(100000));
+        JFrame main = new main();
+        main.setVisible(true);
+        
+        /*Sort a = new SelectionSort(reader.Reader.readAle(1000));
         System.out.println(a.sort());
         
-        InsertionSort s = new InsertionSort(reader.Reader.readAle(100000));
+        Sort s = new InsertionSort(reader.Reader.readAle(1000));
         System.out.println(s.sort());
         
-        BubbleSort b = new BubbleSort(reader.Reader.readAle(100000));
+        Sort b = new BubbleSort(reader.Reader.readAle(1000));
         System.out.println(b.sort());
         //b.print();
         
-        ShellSort sh = new ShellSort(reader.Reader.readAle(1000000));
+        Sort sh = new ShellSort(reader.Reader.readDec(10000000));
         System.out.println(sh.sort());
         //sh.print();
         
-        QuickSort q = new QuickSort(reader.Reader.readAle(1000000));
+        Sort q = new QuickSort(reader.Reader.readDec(10000000));
         System.out.println(q.sort());
         //q.print();
+*/
         
        
     }

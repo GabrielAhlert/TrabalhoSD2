@@ -7,20 +7,21 @@ package sorters;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import models.results;
+import models.R;
 
 /**
  *
  * @author Administrador
  */
-public class SelectionSort {
+public class SelectionSort extends Sort{
     int[] lista;
 
     public SelectionSort(int[] l) {
         this.lista = l;
     }
     
-    public results sort(){
+    @Override
+    public R sort(){
         Calendar cal1 = Calendar.getInstance();
 	int i, j; 
         long comp = 0, moves = 0;
@@ -42,10 +43,11 @@ public class SelectionSort {
 	}
         Calendar cal2 = Calendar.getInstance();
         
-        return new results(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
+        return new R(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
     }
 
 
+    @Override
     public void print() {
         for (int i = 0; i <lista.length; i++) {
            System.out.println(lista[i]); 

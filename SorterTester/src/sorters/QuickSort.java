@@ -6,13 +6,13 @@
 package sorters;
 
 import java.util.Calendar;
-import models.results;
+import models.R;
 
 /**
  *
  * @author gabri
  */
-public class QuickSort {
+public class QuickSort extends Sort{
         int[] lista;
         long moves;
         long comp;
@@ -21,25 +21,27 @@ public class QuickSort {
         this.lista = l;
     }
     
-    public results sort(){
+        @Override
+    public R sort(){
         Calendar cal1 = Calendar.getInstance();
 	quickSort(0, lista.length-1);
         Calendar cal2 = Calendar.getInstance();
         
-        return new results(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
+        return new R(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
     }
     
     private void quickSort(int inicio, int fim){
         this.comp++;
         if(inicio < fim){
-            int pivot = partition(inicio,fim);
-            quickSort(inicio, pivot);
-            quickSort(pivot+1,fim);
+                int pivot = partition(inicio,fim);
+                quickSort(inicio, pivot);
+                quickSort(pivot+1,fim);
         }
         
     }
     
     private int partition(int inicio,int fim){
+        
         int x,i,j,aux;
         x =lista[inicio];
         i=inicio-1;
@@ -62,6 +64,7 @@ public class QuickSort {
     }
 
 
+        @Override
     public void print() {
         for (int i = 0; i <lista.length; i++) {
            System.out.println(lista[i]); 
