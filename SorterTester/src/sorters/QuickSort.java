@@ -19,6 +19,7 @@ public class QuickSort extends Sort{
         
     public QuickSort(int[] l) {
         this.lista = l;
+        
     }
     
         @Override
@@ -30,37 +31,33 @@ public class QuickSort extends Sort{
         return new R(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
     }
     
-    private void quickSort(int inicio, int fim){
-        this.comp++;
-        if(inicio < fim){
-                int pivot = partition(inicio,fim);
-                quickSort(inicio, pivot);
-                quickSort(pivot+1,fim);
+    private void quickSort(int lowerIndex, int higherIndex) {
+        int i = lowerIndex;
+        int j = higherIndex;
+        int pivot = this.lista[lowerIndex + (higherIndex - lowerIndex) / 2];
+        comp++;
+        while (i <= j) {
+            comp++;
+            while (this.lista[i] < pivot) {
+                i++;
+                comp++;
+            }
+            comp++;
+            while (this.lista[j] > pivot) {
+                comp++;
+                j--;
+            }
+            comp++;
+            if (i <= j) {
+                int temp = this.lista[i];
+                this.lista[i] = lista[j];
+                this.lista[j] = temp;
+                i++;
+                j--;
+                moves++;
+            }
         }
-        
-    }
-    
-    private int partition(int inicio,int fim){
-        
-        int x,i,j,aux;
-        x =lista[inicio];
-        i=inicio-1;
-        j=fim+1;
-        
-        while (true){
-            do{ j--; } while (lista[j] > x);
-            do{ i++; } while (lista[i] < x);
-            
-            this.comp++;
-            if( i < j){
-                this.moves++;
-                aux = lista[i];
-                lista[i] = lista[j];
-                lista[j] = aux;
-            }else{
-                return j;
-            }   
-        }
+
     }
 
 

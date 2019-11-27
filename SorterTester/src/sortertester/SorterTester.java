@@ -25,27 +25,27 @@ public class SorterTester {
      */
     public static void main(String[] args) {
         
-        JFrame main = new main();
-        main.setVisible(true);
+        //JFrame main = new main();
+        //main.setVisible(true);
         
-        /*Sort a = new SelectionSort(reader.Reader.readAle(1000));
-        System.out.println(a.sort());
+        //Sort a = new SelectionSort(reader.Reader.readAle(1000));
+        //System.out.println(a.sort());
         
-        Sort s = new InsertionSort(reader.Reader.readAle(1000));
-        System.out.println(s.sort());
+        //Sort s = new InsertionSort(reader.Reader.readAle(1000));
+        //System.out.println(s.sort());
         
-        Sort b = new BubbleSort(reader.Reader.readAle(1000));
-        System.out.println(b.sort());
+        //Sort b = new BubbleSort(reader.Reader.readOrd(1000));
+        //System.out.println(b.sort());
         //b.print();
         
-        Sort sh = new ShellSort(reader.Reader.readDec(10000000));
-        System.out.println(sh.sort());
+        //Sort sh = new ShellSort(reader.Reader.readDec(10000000));
+        //System.out.println(sh.sort());
         //sh.print();
         
         Sort q = new QuickSort(reader.Reader.readDec(10000000));
         System.out.println(q.sort());
-        //q.print();
-*/
+        q.print();
+
         
        
     }
