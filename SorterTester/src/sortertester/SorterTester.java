@@ -12,7 +12,7 @@ import sorters.QuickSort;
 import sorters.SelectionSort;
 import sorters.ShellSort;
 import sorters.Sort;
-import view.Main;
+import view.Screen;
 
 /**
  *
@@ -25,7 +25,7 @@ public class SorterTester {
      */
     public static void main(String[] args) {
         
-        JFrame main = new Main();
+        JFrame main = new Screen();
         main.setVisible(true);
         
         

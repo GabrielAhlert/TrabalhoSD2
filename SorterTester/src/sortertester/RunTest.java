@@ -14,7 +14,7 @@ import sorters.QuickSort;
 import sorters.SelectionSort;
 import sorters.ShellSort;
 import sorters.Sort;
-import view.Main;
+import view.Screen;
 
 
 /**
@@ -23,9 +23,9 @@ import view.Main;
  */
 public class RunTest implements Runnable{
     int slider, radio, combo1,combo2;
-    Main frame;
+    Screen frame;
 
-    public RunTest(int slider, int radio, int combo1, int combo2, Main frame) {
+    public RunTest(int slider, int radio, int combo1, int combo2, Screen frame) {
         this.slider = slider;
         this.radio = radio;
         this.combo1 = combo1;
@@ -117,7 +117,7 @@ public class RunTest implements Runnable{
         SortResult  aR= a.sort();
         SortResult  bR= b.sort();
         
-        frame.StopPro();
+        frame.stopPro();
         
         JOptionPane.showMessageDialog(null, Compare.comparar(aR, bR));
         
