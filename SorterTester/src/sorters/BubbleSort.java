@@ -6,7 +6,7 @@
 package sorters;
 
 import java.util.Calendar;
-import models.R;
+import models.SortResult;
 
 /**
  *
@@ -20,7 +20,7 @@ public class BubbleSort extends Sort {
     }
     
     @Override
-    public R sort()  
+    public SortResult sort()  
     {  
         Calendar cal1 = Calendar.getInstance();
         int aux;
@@ -38,7 +38,7 @@ public class BubbleSort extends Sort {
         }
         
         Calendar cal2 = Calendar.getInstance();
-        return new R(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
+        return new SortResult(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves, "BubbleSort") ;
     }
     
     

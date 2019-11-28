@@ -6,7 +6,7 @@
 package sorters;
 
 import java.util.Calendar;
-import models.R;
+import models.SortResult;
 
 /**
  *
@@ -20,7 +20,7 @@ public class InsertionSort extends Sort{
     }
 
     @Override
-    public R sort()  
+    public SortResult sort()  
     {  
         Calendar cal1 = Calendar.getInstance();
         int i, key, j;
@@ -41,7 +41,7 @@ public class InsertionSort extends Sort{
             moves++;
         }  
         Calendar cal2 = Calendar.getInstance();
-        return new R(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
+        return new SortResult(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves, "InsertionSort") ;
     }
     
     @Override

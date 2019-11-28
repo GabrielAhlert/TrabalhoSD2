@@ -6,7 +6,7 @@
 package sorters;
 
 import java.util.Calendar;
-import models.R;
+import models.SortResult;
 
 /**
  *
@@ -23,12 +23,12 @@ public class QuickSort extends Sort{
     }
     
         @Override
-    public R sort(){
+    public SortResult sort(){
         Calendar cal1 = Calendar.getInstance();
 	quickSort(0, lista.length-1);
         Calendar cal2 = Calendar.getInstance();
         
-        return new R(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
+        return new SortResult(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves,"QuickSort") ;
     }
     
     private void quickSort(int lowerIndex, int higherIndex) {
@@ -56,6 +56,14 @@ public class QuickSort extends Sort{
                 j--;
                 moves++;
             }
+        }
+        
+        if (lowerIndex < j) {
+            quickSort(lowerIndex, j);
+        }
+        if (i < higherIndex) {
+            quickSort(i, higherIndex);
+
         }
 
     }

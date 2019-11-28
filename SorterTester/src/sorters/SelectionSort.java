@@ -7,7 +7,7 @@ package sorters;
 
 import java.util.ArrayList;
 import java.util.Calendar;
-import models.R;
+import models.SortResult;
 
 /**
  *
@@ -21,7 +21,7 @@ public class SelectionSort extends Sort{
     }
     
     @Override
-    public R sort(){
+    public SortResult sort(){
         Calendar cal1 = Calendar.getInstance();
 	int i, j; 
         long comp = 0, moves = 0;
@@ -43,7 +43,7 @@ public class SelectionSort extends Sort{
 	}
         Calendar cal2 = Calendar.getInstance();
         
-        return new R(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
+        return new SortResult(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves, "SelectionSort") ;
     }
 
 
