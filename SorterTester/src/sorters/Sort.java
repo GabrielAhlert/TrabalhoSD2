@@ -5,14 +5,14 @@
  */
 package sorters;
 
-import models.R;
+import models.SortResult;
 
 /**
  *
  * @author Windows
  */
 public class Sort {
-    public R sort(){
+    public SortResult sort(){
         return null;
     }
     

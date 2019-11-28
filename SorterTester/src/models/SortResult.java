@@ -9,21 +9,25 @@ package models;
  *
  * @author Administrador
  */
-public class R {
+public class SortResult {
     public long time;
     public long comparations;
     public long moves;
+    public String nome;
 
-    public R(long time, long comparations, long moves) {
+    public SortResult(long time, long comparations, long moves, String n) {
         this.time = time;
         this.comparations = comparations;
         this.moves = moves;
+        this.nome = n;
     }
 
     @Override
     public String toString() {
-        return "results{" + "time=" + time + "ms, comparations=" + comparations + ", moves=" + moves + '}';
+        return nome + ": " + "Tempo= " + time + "ms, Comparações= " + comparations + ", movimentos= " + moves;
     }
+    
+
     
     
 }

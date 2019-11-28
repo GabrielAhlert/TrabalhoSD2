@@ -6,7 +6,7 @@
 package sorters;
 
 import java.util.Calendar;
-import models.R;
+import models.SortResult;
 
 /**
  *
@@ -20,7 +20,7 @@ public class ShellSort extends Sort{
     }
     
     @Override
-    public R sort(){
+    public SortResult sort(){
         Calendar cal1 = Calendar.getInstance();
 	int i, j, value, gap = 1; 
         long comp = 0, moves = 0;
@@ -51,7 +51,7 @@ public class ShellSort extends Sort{
         
         Calendar cal2 = Calendar.getInstance();
         
-        return new R(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves) ;
+        return new SortResult(cal2.getTimeInMillis()-cal1.getTimeInMillis(), comp, moves, "ShellSort") ;
     }
 
 

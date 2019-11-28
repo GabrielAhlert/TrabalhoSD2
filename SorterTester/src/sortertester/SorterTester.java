@@ -12,7 +12,7 @@ import sorters.QuickSort;
 import sorters.SelectionSort;
 import sorters.ShellSort;
 import sorters.Sort;
-import view.main;
+import view.Main;
 
 /**
  *
@@ -25,8 +25,11 @@ public class SorterTester {
      */
     public static void main(String[] args) {
         
-        //JFrame main = new main();
-        //main.setVisible(true);
+        JFrame main = new Main();
+        main.setVisible(true);
+        
+        
+        
         
         //Sort a = new SelectionSort(reader.Reader.readAle(1000));
         //System.out.println(a.sort());
@@ -42,9 +45,9 @@ public class SorterTester {
         //System.out.println(sh.sort());
         //sh.print();
         
-        Sort q = new QuickSort(reader.Reader.readDec(10000000));
-        System.out.println(q.sort());
-        q.print();
+        //Sort q = new QuickSort(reader.Reader.readDec(10000000));
+        //System.out.println(q.sort());
+        //q.print();
 
         
        
